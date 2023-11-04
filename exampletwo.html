@@ -10,21 +10,28 @@
 </body>
 </html>
 <script>
-    let myPromise = new Promise(function(myResolve,myReject){
-        const x = 8;
-        if(x==8){
-            myResolve("success")
-        }else{
-            myReject("error")
-        }
-    });
+    // let myPromise = new Promise(function(myResolve,myReject){
+    //     const x = 8;
+    //     if(x==8){
+    //         myResolve("success")
+    //     }else{
+    //         myReject("error")
+    //     }
+    // });
 
-    myPromise.then(
-        function(value1){
-            console.log(value1);
-        },
-        function(error){
-            console.log(error);
-        }
-    )
+    // myPromise.then(
+    //     function(value1){
+    //         console.log(value1);
+    //     },
+    //     function(error){
+    //         console.log(error);
+    //     }
+    // )
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://reqres.in/api/products/3", true);
+    xhr.onload = function(){
+        console.log(xhr.responseText);
+    };
+    xhr.send();
 </script>
