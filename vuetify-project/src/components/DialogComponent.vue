@@ -1,8 +1,8 @@
 <template>
   <div class="d-flex justify-content-center">
-    <v-btn> {{ opnemodal }} </v-btn>
+    <v-btn @click="openModal()"> {{ opnemodal }} </v-btn>
   </div>
-  <v-dialog width="500">
+  <v-dialog width="500" v-model="dialog" >
     <DialogModalComponent />
   </v-dialog>
 </template>
@@ -16,10 +16,13 @@ export default {
       data1: "hey",
       data2: {},
       data3: [],
+      dialog: false,
     };
   },
   methods: {
-    openModal() {},
+    openModal() {
+      this.dialog = true;
+    },
   },
   components: {
     DialogModalComponent,

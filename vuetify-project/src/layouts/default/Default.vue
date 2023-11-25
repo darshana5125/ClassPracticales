@@ -1,12 +1,20 @@
 <template>
   <v-app>
-    <default-bar />
-
-    <default-view />
+    <Header />
+    <br/><br/><br/>
+    <router-view />
+    <br/><br/><br/>
+    <Footer />
   </v-app>
 </template>
 
-<script setup>
-  import DefaultBar from './AppBar.vue'
-  import DefaultView from './View.vue'
+<script>
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+export default {
+  components: {
+    Header,
+    Footer,
+  },
+};
 </script>
