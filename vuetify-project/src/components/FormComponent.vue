@@ -20,7 +20,7 @@
             ></v-text-field>
           </v-col>
           <v-col cols="6">
-            <v-btn @click="getData()">Submit</v-btn>
+            <v-btn @click="emiting">Submit</v-btn>
           </v-col>
         </v-row>
       </form>
@@ -37,7 +37,7 @@ export default {
   //props: ["FormData"],
   data() {
     return {
-      //form: {},
+      FormData: {},
       //first_name: "Darshana",
       // last_name: "Kodagoda",
       // address1: "",
@@ -45,6 +45,9 @@ export default {
     };
   },
   methods: {
+    emiting(){
+      this.$emit("emitingFormData",this.FormData)
+    }
     // getData() {
     //   console.log(this.form);
     // console.log(this.last_name);
