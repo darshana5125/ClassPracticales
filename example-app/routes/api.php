@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\TestController;
+
+
 
 
 /*
@@ -26,8 +29,18 @@ Route::get('testroute3',[ExampleController::class,'getsum']);
 
 Route::get('xxx',[ExampleController::class,'getsumtwo']);
 
+Route::get('yyy',[ExampleController::class,'returnObject']);
+
+Route::get('condition',[ExampleController::class,'returnCondidtion']);
+
 
 Route::post('testroutewithpayload',[ExampleController::class,'getsumwithpayload']);
+
+
+
+Route::post('adddata',[TestController::class,'store']);
+
+Route::get('getdata',[TestController::class,'index']);
 
 
 //Route::get('user',[UserController::class,'user']);
