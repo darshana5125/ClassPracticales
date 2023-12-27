@@ -2,10 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\helper;
+use App\OOPExamples\ChildExample;
+use App\OOPExamples\exampleInterface;
 use Illuminate\Http\Request;
+
+
 
 class ExampleController extends Controller
 {
+
+    protected $obj1;
+    protected $obj2;
+
+    // public function __construct(ChildExample $child)
+    // {
+    //     $this->obj1 = $child;
+        
+    // }
+
+    public function __construct(exampleInterface $child)
+    {
+        $this->obj1 = $child;
+        
+    }
 
     public function firstfunc()
     {
@@ -97,4 +117,28 @@ class ExampleController extends Controller
             array_push($arraytest, 'value '.$i);
         }
     }
+
+    // public function inheritanceOOP(){
+    //     return $this->obj1->accessParent();
+    // }
+
+    public function function2(){
+        return $this->obj1->main();
+    }
+
+    public function function3(){
+        return $this->obj1->main1(50,20);
+    }
+
+    public function returnhelper(){
+        $this->obj2 = new helper();
+        return $this->obj2->add(10,3);
+    }
+
+    public function returnhelper2(){
+        
+        return helper::add2(10,5);
+    }
+        
+    
 }

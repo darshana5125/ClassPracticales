@@ -36,6 +36,16 @@ Route::get('condition',[ExampleController::class,'returnCondidtion']);
 
 Route::post('testroutewithpayload',[ExampleController::class,'getsumwithpayload']);
 
+Route::get('oop',[ExampleController::class,'inheritanceOOP']);
+
+Route::get('function2',[ExampleController::class,'function2']);
+
+Route::get('function3',[ExampleController::class,'function3']);
+
+Route::get('helper',[ExampleController::class,'returnhelper']);
+
+Route::get('helper2',[ExampleController::class,'returnhelper2']);
+
 
 
 Route::post('adddata',[TestController::class,'store']);
